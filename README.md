@@ -1,6 +1,6 @@
 # piedmontcopy
 
-> My epic Nuxt.js project
+> Piedmont Copy Vuejs project
 
 ## Build Setup
 
