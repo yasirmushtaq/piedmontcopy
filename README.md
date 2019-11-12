@@ -17,6 +17,12 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# Run Axios API
+$ json-server --watch db.json
+
+# Change Port
+$ PORT=3001 npm run dev  
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
