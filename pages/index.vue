@@ -1,73 +1,57 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        piedmontcopy
-      </h1>
-      <h2 class="subtitle">
-        My epic Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <HomeBanner />
+  <div class="home-products">
+    <EventCard
+        v-for="(product, index) in products"
+        :key="index"
+        :product="product"
+      />
+      <HomeSlider />
+      <div class="wrapper-services">
+        <h2>Our Services</h2>
+        <ServiceCard
+          v-for="(service, index) in services"
+          :key="index"
+          :service="service"
+        />
       </div>
-    </div>
+  </div>
   </div>
 </template>
-
 <script>
-import Logo from '~/components/Logo.vue'
-
+import EventCard from '@/components/EventCard.vue'
+import HomeBanner from '@/components/HomeBanner.vue'
+import HomeSlider from '@/components/HomeSlider.vue'
+import ServiceCard from '@/components/ServiceCard.vue'
+import Footer from '@/components/Footer.vue'
 export default {
+  head() {
+    return {
+      title: 'Piedmont Copy'
+    }
+  },
+  async asyncData({ $axios, error, params }) {
+    const products = await $axios.get('http://localhost:3000/products')
+    const services = await $axios.get('http://localhost:3000/services')
+    return {
+      products: products.data, services: services.data
+      }
+    },
   components: {
-    Logo
+    EventCard,
+    HomeBanner,
+    HomeSlider,
+    ServiceCard
   }
 }
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style scoped>
+  .home-products {
+    width: 1170px;
+    margin: 0 auto;
+  }
+  .wrapper-services {
+    clear: both;
+  }
 </style>
