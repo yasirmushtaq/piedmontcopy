@@ -1,16 +1,16 @@
 <template>
   <nuxt-link :to="'/product/' + product.id">
-    <div class="-shadow">
+    <div class="productCard">
       <img :src="imagePath()">
-      <h4 class="title">
+      <h5 class="title">
         {{ product.title }}
-      </h4>
+      </h5>
     </div>
   </nuxt-link>
 </template>
 <script>
 export default {
-  name: 'EventCard',
+  name: 'ProductCard',
   props: {
     product: Object
   },
@@ -29,13 +29,19 @@ export default {
 </script>
 <style scoped>
 div {
-  width: 228px;
+  width: 300px;
   float: left;
   margin-right: 7px;
   padding: 20px;
   margin-bottom: 24px;
   transition: all 0.2s linear;
   cursor: pointer;
+}
+.productCard {
+  border: solid 1px #e6e6e6;
+}
+.productCard img {
+  height: 175px;
 }
 div:hover {
   transform: scale(1.01);

@@ -7,8 +7,8 @@
       <nuxt-link to="/">
         List |
       </nuxt-link>
-      <nuxt-link to="/product/create">
-        Create
+      <nuxt-link to="/products">
+        All Products
       </nuxt-link>
     </nav>
   </div>
@@ -17,7 +17,6 @@
 .navBar {
   width: 1170px;
   margin: 0 auto;
-
 }
 .brand {
   font-family: 'Montserrat', sans-serif;

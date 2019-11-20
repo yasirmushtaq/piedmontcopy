@@ -101,7 +101,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 clearfix"> 
-            <strong>&copy; 2018 Piedmont Copy. All rights reserved.</strong>
+            <strong>&copy; 2019 Piedmont Copy. All rights reserved.</strong>
           </div>
         </div>
       </div>

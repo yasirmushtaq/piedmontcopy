@@ -161,7 +161,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 1.618rem;
-    font-family: 'Open Sans', Arial, sans-serif,! Helvetica important;
+    font-family: 'Open Sans', Arial, sans-serif, Helvetica !important;
     outline: 0;
     transition: all 0.3s ease 0s;
 }

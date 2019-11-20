@@ -21,7 +21,7 @@
         "id": "abc123",
         "name": "Adam"
       },
-      "category": "animal welfare",
+      "category": "Top Products",
       "icon": "businesscard-thumbnail.png",
       "organizer": "Adam",
       "description": "Yay felines!",
@@ -53,7 +53,7 @@
         "printGuide": "Print guide data",
         "tips": "Tips & Guides data"
       },
-      "category": "animal welfare",
+      "category": "Top Products",
       "organizer": "Adam",
       "icon": "booklets-icon.jpg",
       "description": "Yay cats!",
@@ -85,7 +85,7 @@
         "printGuide": "Print guide data",
         "tips": "Tips & Guides data"
       },
-      "category": "animal welfare",
+      "category": "Top Products",
       "organizer": "Adam",
       "description": "Yay pups!",
       "location": "Puptown ",
@@ -101,7 +101,7 @@
         "id": "abc123",
         "name": "Adam"
       },
-      "category": "animal welfare",
+      "category": "Marketing Products",
       "organizer": "Adam",
       "title": "Post Cards",
       "description": "Yay felines!",
@@ -110,7 +110,7 @@
       "time": "2:00",
       "attendees": ["user1", "user2"],
       "banner": "bizcard-banner.png",
-      "icon": "businesscard-thumbnail.png"      
+      "icon": "businesscard-thumbnail.png"
     },
     {
       "id": 55,
@@ -132,7 +132,7 @@
         "printGuide": "Print guide data",
         "tips": "Tips & Guides data"
       },
-      "category": "animal welfare",
+      "category": "Marketing Products",
       "organizer": "Adam",
       "title": "Stickers",
       "description": "Yay cats!",
@@ -141,7 +141,7 @@
       "time": "7:00",
       "attendees": ["user1", "user2", "user3"],
       "banner": "calendar-banner.jpg",
-      "icon": "businesscard-thumbnail.png"      
+      "icon": "businesscard-thumbnail.png"
     },
     {
       "id": 66,
@@ -195,7 +195,7 @@
         "id": "abc123",
         "name": "Adam"
       },
-      "category": "animal welfare",
+      "category": "Business Products",
       "icon": "businesscard-thumbnail.png",
       "organizer": "Adam",
       "description": "Yay felines!",
@@ -205,6 +205,39 @@
       "attendees": ["user1", "user2"],
       "banner": "banner-signs.jpg",
       "bannerText": "Designing a custom business card might seem like a chore to some, but we have talented professionals who can create what you want.",
+      "bannerColor": "light"
+    },
+    {
+      "id": "00",
+      "title": "All Products",
+      "options": {
+        "size": ["3.5x2 (Standard)", "2x2 (Mini Square)"],
+        "printedSide": ["Full Color Front and Blank Back", "Full Color Both Sides"],
+        "papers": ["10pt. Matte", "12pt. Matte", "10pt. CS2 Gloss", "12pt. CS2 Gloss"],
+        "uvCoatings": ["UV Coating on Front", "UV Coating on Both Sides", "None"],
+        "quantity": ["25","50", "75", "100"]
+      },
+      "relatedData": {
+        "productDetail": "Business Cards - Small enough to fit in a pocket, yet versatile enough to use anywhere, your business card is the most important piece in your marketing arsenal. More than just names and numbers, effectively designed business cards provide a bold first impression with your prospective customers, and put your contact information right at their fingertips when they are ready to buy.",
+        "paperChoices": "Paper choices data",
+        "designTemplates": "Design related data",
+        "printGuide": "Print guide data",
+        "tips": "Tips & Guides data"
+      },
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "icon": "businesscard-thumbnail.png",
+      "organizer": "Adam",
+      "description": "Yay felines!",
+      "location": "Meow Town",
+      "date": "2019-01-03T21:54:00.000Z",
+      "time": "2:00",
+      "attendees": ["user1", "user2"],
+      "banner": "all-products-banner.jpg",
+      "bannerText": "List of all custom products and services offered by Piedmont Copy",
       "bannerColor": "light"
     }
   ],

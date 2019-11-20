@@ -2,7 +2,7 @@
   <div>
     <HomeBanner />
   <div class="home-products">
-    <EventCard
+    <ProductCard
         v-for="(product, index) in products"
         :key="index"
         :product="product"
@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import EventCard from '@/components/EventCard.vue'
+import ProductCard from '@/components/ProductCard.vue'
 import HomeBanner from '@/components/HomeBanner.vue'
 import HomeSlider from '@/components/HomeSlider.vue'
 import ServiceCard from '@/components/ServiceCard.vue'
@@ -39,7 +39,7 @@ export default {
       }
     },
   components: {
-    EventCard,
+    ProductCard,
     HomeBanner,
     HomeSlider,
     ServiceCard
