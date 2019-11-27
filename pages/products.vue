@@ -9,10 +9,11 @@
             <nuxt-link :to="'/products'"> Products > </nuxt-link >
             {{ product.title }}
           </div>
-          <img src="~/assets/images/all-products.jpg" >
+          <!-- <img src="~/assets/images/all-products.jpg" > -->
+          <img :src="product.bannerImage">
           <div class="content">
             <div class="bannerText" :class="{lightBanner : product.bannerColor === 'light' }">
-              <h2>{{ product.title }}</h2>
+              <h2>{{ product.bannerTitle }}</h2>
               {{ product.bannerText }}
             </div>
           </div>
@@ -36,7 +37,10 @@
         />
     </div>
   </div>
+
+
 </template>
+
 <script>
 import ProductCard from '@/components/ProductCard.vue'
 export default {
@@ -45,44 +49,48 @@ export default {
       title: 'All Products'
     } 
   },
-  data() {
+  
+   data() {
     return {
-      tabs: ['All', 'Top Products', 'Marketing Products', 'Business Products'],
+      tabs: ['All', 'Top Products', 'Marketing Products', 'Business Products', 'Promotional Products'],
       selectedTab: 'All',
       allProductsArray: [],
       filteredResult: []
     }
   },
   async asyncData({ $axios, error, params }) {
-    const products = await $axios.get('http://localhost:3000/products')
+    const products = await $axios.get('http://piedmontcopy.com/wp/wp-json/products/v1/all')
     return {
       products: products.data,
-      allProductsArray: products.data
+      allProductsArray: products.data,
+      filter: products.filter
       }
     },
   components: {
     ProductCard
   },
-  computed: {
-    allProducts: function() {
+ /*   computed: {
+     allProducts: function() {
       return this.products.filter( function(product) {
         return product.id == '00'
       })
-    }
-  },
+    }  
+  },  */ 
   methods: {
     filteredProducts: function(tab) {
         this.selectedTab = tab
         this.allProductsArray = this.products.filter((product) => {
-          return product.category.match(this.selectedTab)
+          return product.filter.match(this.selectedTab)
         })
         if (this.selectedTab == 'All') {
           return this.allProductsArray = this.products
         }
     }
-  }
+  }  
 }
+
 </script>
+
 <style scoped>
 .activeTab {
   background-color: rgba(91,156,204,.9);
