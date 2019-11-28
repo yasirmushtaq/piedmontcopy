@@ -1,5 +1,6 @@
 <template>
-  <div>
+
+  <div v-if="product">
     <div class="breadcrumbs-wrapper">
       <div class="breadcrumb">
         <nuxt-link :to="'/'" >Home > </nuxt-link > 
@@ -7,17 +8,18 @@
         {{ product.title }}
       </div>
     </div>
-    <img :src="bannerImage()">
+    <img :src="product.bannerImage">
     <div class="content">
       <div class="bannerText" :class="{lightBanner : product.bannerColor === 'light' }">
         <h2>{{ product.title }}</h2>
         {{ product.bannerText }}
       </div>
-      <h3>{{ product.title }} </h3>
+      <!-- <h3>{{ product.title }} </h3> -->
       <div class="product-option">
       <div class="column">
-        <h4>Product Options</h4>
-        <h6>Size</h6>
+        <h2><span class="badge">1</span>Product Options</h2>
+        <div v-html="product.productOptions"></div>
+        <!-- <h6>Size</h6>
         <select>
           <option v-for="(size, index) in product.options.size"
             :key="index">
@@ -51,14 +53,14 @@
             :key="index">
             {{ quantity }}
           </option>
-        </select>
+        </select> -->
       </div>
       <div class="column">
-        <h4>Upload Design</h4>
+        <h2><span class="badge">2</span>Upload Design</h2>
         <img id="frontpreviewing" src="http://piedmontcopy.com/wp/wp-content/themes/piedmont/assets/images/upload-img.png">
-      </div>
+      </div> 
       <div class="column job-summary">
-        <h4>Job Information</h4>
+        <h2><span class="badge">3</span>Job Information</h2>
         <input type="text" placeholder="Job Name" name="job_name">
         <input type="text" placeholder="Full Name" name="full_name">
         <input type="text" placeholder="Email" name="email">
@@ -77,8 +79,10 @@
   </div>
 </template>
 <script>
+
 import ProductTabs from '@/components/Product-tabs.vue'
 export default {
+
   components: {
     ProductTabs
   },
@@ -87,20 +91,24 @@ export default {
       title: 'Product Detail'
     }
   },
-  asyncData({ $axios, error, params }) {
-    return $axios.get('http://localhost:3000/products/' + params.id ).then((response) => {
+   
+  async asyncData({ $axios, error, params }) {
+    return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v1/productID/' + params.id ).then((response) => {
+      //alert(params.id);
       return {
         product: response.data
       }
+     
     })
     .catch( e => {
       error({ statusCode: 503, message: 'unable to load products at this time. please try again'})
     })
   },
   methods: {
-    bannerImage() {
+   /*  bannerImage() {
       return require ('~/assets/images/' + this.product.banner)
-    }
+    } */
+    
   }
 }
 </script>
@@ -168,5 +176,29 @@ input {
 }
 .lightBanner {
   color: #FFF;
+}
+.product-option h2 {
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #6aa6d1;
+    width: 100%;
+    padding: 6px 10px;
+    margin-top: 10px;
+}
+.badge {
+    display: inline-block;
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #ff9948;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 </style>
