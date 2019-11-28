@@ -7,7 +7,7 @@
         {{ product.title }}
       </div>
     </div>
-    <img :src="bannerImage()">
+    <img :src="product.bannerImage">
     <div class="content">
       <div class="bannerText" :class="{lightBanner : product.bannerColor === 'light' }">
         <h2>{{ product.title }}</h2>
@@ -15,7 +15,7 @@
       </div>
       <h3>{{ product.title }} </h3>
       <div class="product-option">
-      <div class="column">
+      <!-- <div class="column">
         <h4>Product Options</h4>
         <h6>Size</h6>
         <select>
@@ -56,7 +56,7 @@
       <div class="column">
         <h4>Upload Design</h4>
         <img id="frontpreviewing" src="http://piedmontcopy.com/wp/wp-content/themes/piedmont/assets/images/upload-img.png">
-      </div>
+      </div> -->
       <div class="column job-summary">
         <h4>Job Information</h4>
         <input type="text" placeholder="Job Name" name="job_name">
@@ -77,8 +77,11 @@
   </div>
 </template>
 <script>
+
+
 import ProductTabs from '@/components/Product-tabs.vue'
 export default {
+
   components: {
     ProductTabs
   },
@@ -87,20 +90,28 @@ export default {
       title: 'Product Detail'
     }
   },
-  asyncData({ $axios, error, params }) {
-    return $axios.get('http://localhost:3000/products/' + params.id ).then((response) => {
+ data() {
+        return{
+          this.product
+        }
+ }
+  async asyncData({ $axios, error, params }) {
+    return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v1/productID/' + params.id ).then((response) => {
+      //alert(params.id);
       return {
         product: response.data
       }
+     
     })
     .catch( e => {
       error({ statusCode: 503, message: 'unable to load products at this time. please try again'})
     })
   },
   methods: {
-    bannerImage() {
+   /*  bannerImage() {
       return require ('~/assets/images/' + this.product.banner)
-    }
+    } */
+    
   }
 }
 </script>
