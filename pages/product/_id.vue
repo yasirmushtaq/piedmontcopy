@@ -90,11 +90,7 @@ export default {
       title: 'Product Detail'
     }
   },
- data() {
-        return{
-          this.product
-        }
- }
+ 
   async asyncData({ $axios, error, params }) {
     return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v1/productID/' + params.id ).then((response) => {
       //alert(params.id);
