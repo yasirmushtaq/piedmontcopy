@@ -1,12 +1,17 @@
 <template>
   <div>
-    <carousel :data="data"></carousel>
-    Slider
+    <!--<carousel :data="data"></carousel>-->
+    <h5 class="title">
+        {{ slider.title }}
+      </h5>
+      <p>{{ slider.description }}</p>
   </div>
 </template>
 
+
+
 <script>
-  export default {
+ /*  export default {
     data() {
       return {
         data: [
@@ -16,7 +21,16 @@
         ],
       };
     },
-  };
+  }; */
+  
+</script>
+<script>
+export default {
+  name: 'HomeSlider',
+  props: {
+    slider: Object
+  },
+}
 </script>
 
 <style>

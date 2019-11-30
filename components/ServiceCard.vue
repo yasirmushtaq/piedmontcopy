@@ -3,10 +3,8 @@
   <div class="wrapper">
     <h3>{{ service.title }}</h3>
     <ul>
-      <li
-        v-for="(item, index) in service.item"
-        :key="index">
-          {{ item }}
+      <li>
+          {{ service.item }}
       </li>
     </ul>
   </div>

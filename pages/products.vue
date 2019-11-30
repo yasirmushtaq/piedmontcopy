@@ -10,7 +10,7 @@
             {{ product.title }}
           </div>
           <!-- <img src="~/assets/images/all-products.jpg" > -->
-          <img :src="product.bannerImage">
+         
           <div class="content">
             <div class="bannerText" :class="{lightBanner : product.bannerColor === 'light' }">
               <h2>{{ product.bannerTitle }}</h2>
@@ -19,6 +19,17 @@
           </div>
         </div>
     </div>
+
+     <div class="hero-banner">
+            <img alt="Calendar" src="http://piedmontcopy.com/wp/wp-content/uploads/2018/08/calendar_banner-copy.jpg">      
+          </div>
+          <div class="banner-text-wrapper">
+            <div class="banner-text">
+              <h4> All Products</h4>
+              <p>List of all custom products and services offered by Piedmont Copy </p>
+            </div>
+          </div>
+
     <div class="content">
       <div class="filter-wrapper"> <strong>Filter Products:</strong>
         <span 
@@ -49,13 +60,14 @@ export default {
       title: 'All Products'
     } 
   },
-  
+ 
    data() {
     return {
       tabs: ['All', 'Top Products', 'Marketing Products', 'Business Products', 'Promotional Products'],
       selectedTab: 'All',
       allProductsArray: [],
-      filteredResult: []
+      filteredResult: [],
+      filter: []
     }
   },
   async asyncData({ $axios, error, params }) {
@@ -63,19 +75,19 @@ export default {
     return {
       products: products.data,
       allProductsArray: products.data,
-      filter: products.filter
+     // filter: products.data.filter
       }
     },
   components: {
     ProductCard
   },
- /*   computed: {
-     allProducts: function() {
-      return this.products.filter( function(product) {
+   computed: {
+      allProducts: function(product) {
+     // return this.products.filter( function(product) {
         return product.id == '00'
-      })
-    }  
-  },  */ 
+     // })
+    }   
+  },  
   methods: {
     filteredProducts: function(tab) {
         this.selectedTab = tab
@@ -135,5 +147,27 @@ export default {
     background: #000;
     background: rgba(0,0,0,.75);
     background: linear-gradient(to right,rgba(0,0,0,.1),rgba(0,0,0,0) 75%);
+}
+.banner-text {
+    width: 1100px;
+    /* height: 200px; */
+    position: relative;
+    color: #575757;
+    margin: 0 auto;
+    margin-top: -169px;
+    margin-bottom: 80px;
+    min-height: 115px;
+}
+.banner-text h4 {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 1.5em;
+   -webkit-font-smoothing: antialiased;
+}
+.banner-text p {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 1.1em;
+    width: 450px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3em;
 }
 </style>

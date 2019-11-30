@@ -1,10 +1,11 @@
 <template>
   <nuxt-link :to="'/product/' + product.id">
     <div class="productCard">
-      <img :src="imagePath()">
+      <img :src="product.iconImage">
       <h5 class="title">
         {{ product.title }}
       </h5>
+      
     </div>
   </nuxt-link>
 </template>
@@ -14,17 +15,17 @@ export default {
   props: {
     product: Object
   },
-  methods: {
+  /* methods: {
     imagePath() {
       return require ('~/assets/images/' + this.product.icon)
     }
-  },
+  },*/
   computed: {
     parsedDate() {
       const eventDate = new Date(this.product.date)
       return eventDate.toDateString()
     }
-  }
+  } 
 }
 </script>
 <style scoped>

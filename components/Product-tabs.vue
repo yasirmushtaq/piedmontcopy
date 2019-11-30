@@ -1,5 +1,6 @@
 <template>
   <div class="tabs">
+   
     <a
       :class="{ activeTab: selectedTab === tab}"
       v-for="(tab, index) in tabs"
@@ -7,12 +8,13 @@
       @click = "selectedTab = tab"
     >
       {{ tab }}
+
     </a>
-    <div v-if="selectedTab == 'Product Detail'" class="tab-content">{{ product.relatedData.productDetail }}</div>
-    <div v-if="selectedTab == 'Paper Choices'" class="tab-content">{{ product.relatedData.paperChoices }}</div>
-    <div v-if="selectedTab == 'Design Templates'" class="tab-content">{{ product.relatedData.designTemplates }}</div>
-    <div v-if="selectedTab == 'Print Guide'" class="tab-content">{{ product.relatedData.printGuide }}</div>
-    <div v-if="selectedTab == 'Tips & Ideas'" class="tab-content">{{ product.relatedData.tips }}</div>
+    <div v-if="selectedTab == 'Product Detail'" class="tab-content" v-html="product.tabDetail"></div>
+    <div v-if="selectedTab == 'Paper Choices'" class="tab-content" v-html="product.paperChoices"></div>
+    <div v-if="selectedTab == 'Design Templates'" class="tab-content" v-html="product.designTemplates"></div>
+    <div v-if="selectedTab == 'Print Guide'" class="tab-content" v-html="product.printGuides"></div>
+    <div v-if="selectedTab == 'Tips & Ideas'" class="tab-content" v-html="product.tipsIdeas"></div> 
   </div>
 </template>
 <script>

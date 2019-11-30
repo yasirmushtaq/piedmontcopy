@@ -7,7 +7,10 @@
         :key="index"
         :product="product"
       />
-      <HomeSlider />
+      <HomeSlider v-for="(slider, index) in sliders"
+        :key="index"
+        :slider="slider"
+        />
       <div class="wrapper-services">
         <h2>Our Services</h2>
         <ServiceCard
@@ -16,6 +19,8 @@
           :service="service"
         />
       </div>
+      
+      
   </div>
   </div>
 </template>
@@ -32,10 +37,11 @@ export default {
     }
   },
   async asyncData({ $axios, error, params }) {
-    const products = await $axios.get('http://localhost:3000/products')
-    const services = await $axios.get('http://localhost:3000/services')
+    const products = await $axios.get('http://piedmontcopy.com/wp/wp-json/products/v1/feeds') //http://piedmontcopy.com/wp/wp-json/products/v1/feeds //http://localhost:3000/products
+    const services = await $axios.get('http://piedmontcopy.com/wp/wp-json/services/v1/feeds') //http://piedmontcopy.com/wp/wp-json/services/v1/feeds //http://localhost:3000/services
+    const sliders = await $axios.get('http://piedmontcopy.com/wp/wp-json/sliders/v1/feeds') //http://piedmontcopy.com/wp/wp-json/services/v1/feeds //http://localhost:3000/services
     return {
-      products: products.data, services: services.data
+      products: products.data, services: services.data, sliders: sliders.data
       }
     },
   components: {

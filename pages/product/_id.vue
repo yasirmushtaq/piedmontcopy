@@ -2,7 +2,7 @@
 
   <div v-if="product">
     <div class="breadcrumbs-wrapper">
-      <div class="breadcrumb">
+      <div class="breadcrumb" style="bckground: none !important;">
         <nuxt-link :to="'/'" >Home > </nuxt-link > 
         <nuxt-link :to="'/products'"> Products > </nuxt-link > 
         {{ product.title }}
@@ -109,7 +109,8 @@ export default {
       return require ('~/assets/images/' + this.product.banner)
     } */
     
-  }
+  },
+ 
 }
 </script>
 <style scoped>
