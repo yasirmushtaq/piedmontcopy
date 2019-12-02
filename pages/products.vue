@@ -86,19 +86,27 @@ export default {
      // return this.products.filter( function(product) {
         return product.id == '00'
      // })
-    }   
-  },  
+    }
+  },
   methods: {
     filteredProducts: function(tab) {
         this.selectedTab = tab
-        this.allProductsArray = this.products.filter((product) => {
-          return product.filter.match(this.selectedTab)
+        var obj = this.products
+        var arr = Object.keys(obj)
+        //console.log(arr)
+        var arrObj = arr.map(function(key){
+          return {[key]: obj[key]}
         })
+        var prod = { arrObj }
+        console.log( prod )
+        this.allProductsArray = arrObj.filter((product) => {
+          return product.filter.match(this.selectedTab)
+         })
         if (this.selectedTab == 'All') {
-          return this.allProductsArray = this.products
+          //return this.allProductsArray = this.products
         }
     }
-  }  
+  }
 }
 
 </script>
