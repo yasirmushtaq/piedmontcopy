@@ -1,16 +1,19 @@
 <template>
   <div>
     <HomeBanner />
+    <div class="container">
+    <div class="row justify-content-center">
   <div class="home-products">
     <ProductCard
         v-for="(product, index) in products"
         :key="index"
         :product="product"
       />
-      <HomeSlider v-for="(slider, index) in sliders"
+      </div></div>
+     <!--  <HomeSlider v-for="(slider, index) in sliders"
         :key="index"
         :slider="slider"
-        />
+        /> -->
       <div class="wrapper-services">
         <h2>Our Services</h2>
         <ServiceCard

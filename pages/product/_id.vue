@@ -2,7 +2,7 @@
 
   <div v-if="product">
     <div class="breadcrumbs-wrapper">
-      <div class="breadcrumb" style="bckground: none !important;">
+      <div class="breadcrumb">
         <nuxt-link :to="'/'" >Home > </nuxt-link > 
         <nuxt-link :to="'/products'"> Products > </nuxt-link > 
         {{ product.title }}
@@ -154,6 +154,7 @@ input {
     padding-top: 5px;
     margin: 0 auto;
     font-size: 11px;
+    background-color: unset !important;
   }
 
 .bannerText {
