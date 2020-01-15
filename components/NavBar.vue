@@ -67,7 +67,7 @@
                     <a href="#"><i class="fa fa-bars"></i>Menu</a>
                   </li>
                 
-                  <li aria-haspopup="true"><a href="/products">All Products</a>
+                  <li aria-haspopup="true"><a href="/vue/products">All Products</a>
                     <ul class="dropdown-navigation-submenu">
                       <li><a href="#">Banners </a></li>
                       <li><a href="#">Booklets</a></li>
@@ -98,7 +98,7 @@
                       <li><a href="#">Sell Sheets</a></li>
                       <li><a href="#">Signs</a></li>
                       <li><a href="#">Stickers</a></li>
-                      <li><a href="/products">See All Products</a></li>
+                      <li><a href="/vue/products">See All Products</a></li>
                       
                     </ul>
                   </li>

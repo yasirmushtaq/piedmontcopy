@@ -11,15 +11,28 @@
     <img :src="product.bannerImage">
     <div class="content">
       <div class="bannerText" :class="{lightBanner : product.bannerColor === 'light' }">
-        <h2>{{ product.title }}</h2>
-        {{ product.bannerText }}
+        <h2>{{ product.bannerTitle }}</h2>
+        {{ product.bannerContent }}
       </div>
       <!-- <h3>{{ product.title }} </h3> -->
       <div class="product-option">
       <div class="column">
         <h2><span class="badge">1</span>Product Options</h2>
-        <div v-html="product.productOptions"></div>
-        <!-- <h6>Size</h6>
+
+        <div v-for="(optGroup, index) in product.productOptions" :key="index">
+          <h6>{{optGroup.option_name}}</h6>
+          <select v-model="optGroup.option_name" >
+            <option v-for="(optItem, index) in optGroup.option_title_price"
+              :key="optItem.Price"
+              :value="optItem.Price"
+              :id="optItem.title">
+              {{ optItem.title }}
+            </option>
+          </select>
+        
+        </div>
+       <!-- <div v-html="product.productOptions"></div>
+         <h6>Size</h6>
         <select>
           <option v-for="(size, index) in product.options.size"
             :key="index">
@@ -93,7 +106,9 @@ export default {
   },
    
   async asyncData({ $axios, error, params }) {
-    return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v1/productID/' + params.id ).then((response) => {
+    //return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v1/productID/' + params.id ).then((response) => {
+      return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v2/productID/' + params.id ).then((response) => {
+      
       //alert(params.id);
       return {
         product: response.data
@@ -103,6 +118,10 @@ export default {
     .catch( e => {
       error({ statusCode: 503, message: 'unable to load products at this time. please try again'})
     })
+  },
+  computed : {
+    
+   
   },
   methods: {
    /*  bannerImage() {

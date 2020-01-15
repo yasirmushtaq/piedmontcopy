@@ -1,21 +1,19 @@
 <template>
-  <div class="tabs">
-   
-    <a
-      :class="{ activeTab: selectedTab === tab}"
-      v-for="(tab, index) in tabs"
-      :key= index
-      @click = "selectedTab = tab"
-    >
-      {{ tab }}
 
-    </a>
-    <div v-if="selectedTab == 'Product Detail'" class="tab-content" v-html="product.tabDetail"></div>
-    <div v-if="selectedTab == 'Paper Choices'" class="tab-content" v-html="product.paperChoices"></div>
-    <div v-if="selectedTab == 'Design Templates'" class="tab-content" v-html="product.designTemplates"></div>
-    <div v-if="selectedTab == 'Print Guide'" class="tab-content" v-html="product.printGuides"></div>
-    <div v-if="selectedTab == 'Tips & Ideas'" class="tab-content" v-html="product.tipsIdeas"></div> 
-  </div>
+  <div class="tabs">
+      <a
+        :class="{ activeTab: selectedTab === tabItem.tab_title}"
+        v-for="(tabItem, index) in product.productChoices" :key="index"
+        @click = "selectedTab = tabItem.tab_title"
+      >
+        {{ tabItem.tab_title }}
+
+      </a>
+
+      <div v-for="(tabItem, index) in product.productChoices" :key="index">
+        <div v-if="selectedTab == tabItem.tab_title" class="tab-content" v-html="tabItem.tab_content"></div>
+      </div>
+  </div> 
 </template>
 <script>
 
@@ -26,9 +24,10 @@ export default {
   data() {
     return {
       tabs: ['Product Detail', 'Paper Choices', 'Design Templates', 'Print Guide', 'Tips & Ideas'],
-      selectedTab: 'Product Detail'
+      selectedTab: 'Product Detail',
     }
-  }
+  },
+ 
 }
 </script>
 <style scoped>

@@ -1,5 +1,8 @@
 export default {
   mode: 'universal',
+  router: {
+    base: '/vue/'
+  },
   /*
    ** Headers of the page
    */

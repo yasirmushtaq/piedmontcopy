@@ -40,7 +40,7 @@ export default {
     }
   },
   async asyncData({ $axios, error, params }) {
-    const products = await $axios.get('http://piedmontcopy.com/wp/wp-json/products/v1/feeds') //http://piedmontcopy.com/wp/wp-json/products/v1/feeds //http://localhost:3000/products
+    const products = await $axios.get('http://piedmontcopy.com/wp/wp-json/products/v2/feeds') //http://piedmontcopy.com/wp/wp-json/products/v1/feeds //http://localhost:3000/products
     const services = await $axios.get('http://piedmontcopy.com/wp/wp-json/services/v1/feeds') //http://piedmontcopy.com/wp/wp-json/services/v1/feeds //http://localhost:3000/services
     const sliders = await $axios.get('http://piedmontcopy.com/wp/wp-json/sliders/v1/feeds') //http://piedmontcopy.com/wp/wp-json/services/v1/feeds //http://localhost:3000/services
     return {

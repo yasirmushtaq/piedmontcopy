@@ -71,7 +71,8 @@ export default {
     }
   },
   async asyncData({ $axios, error, params }) {
-    const products = await $axios.get('http://piedmontcopy.com/wp/wp-json/products/v1/all')
+    //const products = await $axios.get('http://piedmontcopy.com/wp/wp-json/products/v1/all')
+    const products = await $axios.get('http://piedmontcopy.com/wp/wp-json/products/v2/all')
     return {
       products: products.data,
       allProductsArray: products.data,
