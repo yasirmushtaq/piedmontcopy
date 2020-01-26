@@ -1,4 +1,6 @@
 <template>
+<div>
+  <div class="gap"></div>
   <div class="footer">
   <footer>
     <div class="container">
@@ -84,34 +86,37 @@
         </div>
 
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"></div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="social">
-            <ul class="social-list list-inline">
-              <li><a href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-block"></div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="social">
+              <ul class="social-list list-inline">
+                <li><a href="" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
           </div>
         </div>
-
     </div>
-
-    <div class="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 clearfix"> 
-            <strong>&copy; 2019 Piedmont Copy. All rights reserved.</strong>
+      <div class="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 clearfix"> 
+              <strong>&copy; 2019 Piedmont Copy. All rights reserved.</strong>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </footer>
   </div>
+    </div>
 </template>
 <style scoped>
  .gap {
-     height: 30px;
+     height: 50px;
      width: 100%;
      clear: both;
      display: block;
@@ -119,10 +124,7 @@
 a {
   font-weight: normal;
 }
-.container {
-    width: 1170px;
-    margin: 0 auto;
-}
+
  .footer {
      clear: both;
      background: #EDEFF1;
@@ -218,7 +220,7 @@ footer .head {
 }
  .social {
      float: right;
-     margin: 0 10px 10px;
+     margin: 0 20px 22px 10px;
 }
  .social li {
      background: none repeat scroll 0 0 #B5B5B5;
@@ -272,8 +274,14 @@ footer .head {
  .paymentMethodImg img {
      margin-left: 5px;
 }
-.col-sm-2 {
-    float: left;
-    width: 16.66666667%;
+
+.copyright{
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #DDDDDD;
+  font-size: 13px;
+  color: #7F8C8D;
+  font-weight: 400;
+    line-height: 1.5;
+    padding:20px 0;
 }
 </style>

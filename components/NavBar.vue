@@ -68,39 +68,50 @@
                   </li>
                 
                   <li aria-haspopup="true"><a href="/vue/products">All Products</a>
-                    <ul class="dropdown-navigation-submenu">
-                      <li><a href="#">Banners </a></li>
-                      <li><a href="#">Booklets</a></li>
-                      <li><a href="#">Bookmarks</a></li>
-                      <li><a href="#">Brouchers</a></li>
-                      <li><a href="#">Business Cards</a></li>
-                      <li><a href="#">Calendars</a></li>
-                      <li><a href="#">CD/DVD Sleeves</a></li>
-                      <li><a href="#">Door Hangers</a></li>
-                      <li><a href="#">Envelopes</a></li>
-                      <li><a href="#">Event Tickets</a></li>
-                      <li><a href="#">Funeral Programs</a></li>
-                      <li><a href="#">Flyers</a></li>
-                      <li><a href="#">Greeting Cards</a></li>
-                      <li><a href="#">Hang Tags</a></li>
-                      <li><a href="#">ID Badges</a></li>
-                      <li><a href="#">Invitation Cards</a></li>
-                      <li><a href="#">Letterheads</a></li>
-                      <li><a href="#">Magnets</a></li>
-                      <li><a href="#">Memo Pads</a></li>
-                      <li><a href="#">Menus</a></li>
-                      <li><a href="#">Newsletters</a></li>
-                      <li><a href="#">Notepads</a></li>
-                      <li><a href="#">Pocket Folders</a></li>
-                      <li><a href="#">Postcards</a></li>
-                      <li><a href="#">Posters</a></li>
-                      <li><a href="#">Rack cards</a></li>
-                      <li><a href="#">Sell Sheets</a></li>
-                      <li><a href="#">Signs</a></li>
-                      <li><a href="#">Stickers</a></li>
-                      <li><a href="/vue/products">See All Products</a></li>
-                      
-                    </ul>
+                    <div class="conatiner-fluid megamenu ">
+                        <div class="row px-4">
+                        <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                          <li><a href="#">Banners </a></li>
+                          <li><a href="#">Booklets</a></li>
+                          <li><a href="#">Bookmarks</a></li>
+                          <li><a href="#">Brouchers</a></li>
+                          <li><a href="#">Business Cards</a></li>
+                          <li><a href="#">Calendars</a></li>
+                          <li><a href="#">CD/DVD Sleeves</a></li>
+                        </ul>
+                        <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                          <li><a href="#">Door Hangers</a></li>
+                          <li><a href="#">Envelopes</a></li>
+                          <li><a href="#">Event Tickets</a></li>
+                          <li><a href="#">Funeral Programs</a></li>
+                          <li><a href="#">Flyers</a></li>
+                          <li><a href="#">Greeting Cards</a></li>
+                          <li><a href="#">Hang Tags</a></li>
+                        </ul>
+                        <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                          <li><a href="#">ID Badges</a></li>
+                          <li><a href="#">Invitation Cards</a></li>
+                          <li><a href="#">Letterheads</a></li>
+                          <li><a href="#">Magnets</a></li>
+                          <li><a href="#">Memo Pads</a></li>
+                          <li><a href="#">Menus</a></li>
+                          <li><a href="#">Newsletters</a></li>
+                        </ul>
+                        <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                          <li><a href="#">Notepads</a></li>
+                          <li><a href="#">Pocket Folders</a></li>
+                          <li><a href="#">Postcards</a></li>
+                          <li><a href="#">Posters</a></li>
+                          <li><a href="#">Rack cards</a></li>
+                          <li><a href="#">Sell Sheets</a></li>
+                          <li><a href="#">Signs</a></li>
+                          <li><a href="#">Stickers</a></li>
+                        </ul>
+                        <ul class="col-lg-12 col-md-12 col-xs-12">
+                          <li class="bottom-link"><a href="/vue/products">See All Products</a></li>
+                        </ul>
+                      </div>
+                    </div>
                   </li>
                  
                    <li aria-haspopup="true"><a href="#" class="red">Marketing Materials</a>
@@ -491,6 +502,3 @@
 
   </div>
 </template>
-
-<style scoped src="@/assets/css/navigation.css">
-</style>

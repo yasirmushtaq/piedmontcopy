@@ -11,7 +11,7 @@
           </div>
           <!-- <img src="~/assets/images/all-products.jpg" > -->
          
-          <div class="content">
+          <div class="container">
             <div class="bannerText" :class="{lightBanner : product.bannerColor === 'light' }">
               <h2>{{ product.bannerTitle }}</h2>
               {{ product.bannerText }}
@@ -30,7 +30,7 @@
             </div>
           </div>
 
-    <div class="content">
+    <div class="container">
       <div class="filter-wrapper"> <strong>Filter Products:</strong>
         <span 
           :class="{activeTab: selectedTab == tab}"
@@ -113,7 +113,10 @@ export default {
 .activeTab {
   background-color: rgba(91,156,204,.9);
   color: white;
-  padding: 3px 16px;
+  padding: 5px 20px;
+  transition: opacity .45s ease-in-out;
+   -moz-transition: opacity .45s ease-in-out;
+   -webkit-transition: opacity .45s ease-in-out;
 }
   .breadcrumb {
     width: 1170px;
@@ -124,16 +127,27 @@ export default {
   .content {
     width: 1170px;
     margin: 0 auto;
+    opacity: 1;
+   transition: opacity .45s ease-in-out;
+   -moz-transition: opacity .45s ease-in-out;
+   -webkit-transition: opacity .45s ease-in-out;
   }
-  .content span:first-child {
+  .content a {
+    opacity: 1;
+   transition: opacity .45s ease-in-out;
+   -moz-transition: opacity .45s ease-in-out;
+   -webkit-transition: opacity .45s ease-in-out;
+  }
+  .filter-wrapper span:first-child {
     margin-left: 10px;
   }
-  .content span {
+  .filter-wrapper span {
     margin-right: 10px;
     cursor: pointer;
+    padding: 10px 15px;
   }
 .filter-wrapper {
-  padding: 10px;
+  padding: 20px 0;
 }
 .bannerText {
     position: relative;

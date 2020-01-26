@@ -35,10 +35,18 @@ export default {
     margin-bottom: 50px;
   }
   .tabs a {
-    padding: 6px 10px;
+    padding: 10px 20px;
     color: #656565;
     font-size: 14px;
+    border: solid 1px #ddd;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+     margin-left: 5px;
   }
+  .tabs a:first-child {
+    margin-left: 0;
+  }
+
   .activeTab {
     color: #FFF !important;
     cursor: default;
@@ -47,9 +55,9 @@ export default {
     border-top-right-radius: 4px;
   }
   .tab-content {
-    margin-top: 2px;
+    margin-top: 6px;
     color: #808080;
-    padding: 20px 10px;
+    padding: 30px 20px;
     border: solid 1px #ddd;
     border-radius: 4px;
   }

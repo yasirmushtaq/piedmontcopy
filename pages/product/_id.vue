@@ -1,15 +1,15 @@
 <template>
 
   <div v-if="product">
-    <div class="breadcrumbs-wrapper">
-      <div class="breadcrumb">
+    <div class="container-fluid breadcrumbs-wrapper">
+      <div class="breadcrumb container">
         <nuxt-link :to="'/'" >Home > </nuxt-link > 
         <nuxt-link :to="'/products'"> Products > </nuxt-link > 
         {{ product.title }}
       </div>
     </div>
     <img :src="product.bannerImage">
-    <div class="content">
+    <div class="container">
       <div class="bannerText" :class="{lightBanner : product.bannerColor === 'light' }">
         <h2>{{ product.bannerTitle }}</h2>
         {{ product.bannerContent }}
@@ -21,7 +21,7 @@
 
         <div v-for="(optGroup, index) in product.productOptions" :key="index">
           <h6>{{optGroup.option_name}}</h6>
-          <select v-model="optGroup.option_name" >
+          <select >
             <option v-for="(optItem, index) in optGroup.option_title_price"
               :key="optItem.Price"
               :value="optItem.Price"
@@ -94,6 +94,7 @@
 <script>
 
 import ProductTabs from '@/components/Product-tabs.vue'
+
 export default {
 
   components: {
@@ -104,7 +105,11 @@ export default {
       title: 'Product Detail'
     }
   },
-   
+  /* validate ({ params }) {
+    // Must be a number
+    return /^\d+$/.test(params.id)
+    
+  },  */
   async asyncData({ $axios, error, params }) {
     //return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v1/productID/' + params.id ).then((response) => {
       return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v2/productID/' + params.id ).then((response) => {
@@ -118,6 +123,7 @@ export default {
     .catch( e => {
       error({ statusCode: 503, message: 'unable to load products at this time. please try again'})
     })
+
   },
   computed : {
     
@@ -131,12 +137,10 @@ export default {
   },
  
 }
+
 </script>
 <style scoped>
-.content {
-  width: 1170px;
-  margin: 0 auto;
-}
+
 input {
   margin-bottom: 15px;
 }
@@ -150,15 +154,17 @@ input {
     background-color: #ff9948;
 }
 .job-summary .btn-primary {
-    width: 50%;
+    width: 100%;
     text-transform: uppercase;
     font-size: 16px;
-    color: #fff;
     margin: 0 auto;
-    margin-left: 70px;
-    padding: 6px 15px;
+    margin: 20px 0;
+    padding: 0;
+    border:none;
 }
-
+.job-summary .btn-primary:hover {
+  opacity: 0.9;
+}
 .product-option {
     width: 100%;
     float: left;
@@ -167,33 +173,38 @@ input {
     background-color: #f7f7f7;
     padding: 15px;
 }
-
   .breadcrumb {
-    width: 1170px;
+    
     padding-top: 5px;
     margin: 0 auto;
     font-size: 11px;
-    background-color: unset !important;
+    background: unset !important;
   }
-
+.breadcrumb a {
+  color: #656565;
+  padding: 0 5px;
+}
 .bannerText {
     position: relative;
     color: #575757;
-    margin-top: -169px;
+    margin-top: -200px;
     width: 450px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     min-height: 115px;
 }
 .breadcrumbs-wrapper {
     border-top: 1px solid rgba(55,55,55,.1);
     height: 28px;
-    margin-bottom: -28px;
+    /* margin-bottom: -28px;
     position: relative;
-    z-index: 90;
+    z-index: 90; */
     color: #FFF;
-    background: #000;
-    background: rgba(0,0,0,.75);
-    background: linear-gradient(to right,rgba(0,0,0,.1),rgba(0,0,0,0) 75%);
+    background: rgb(198,198,198); /* Old browsers */
+background: -moz-linear-gradient(top, rgb(198,198,198) 0%, rgb(202,202,202) 12%, rgb(206,206,206) 25%, rgb(196,196,196) 39%, rgb(187,187,187) 50%, rgb(187,187,187) 76%, rgb(173,173,173) 82%, rgb(173,173,173) 82%, rgb(182,182,182) 91%, rgb(179,179,179) 93%, rgb(179,179,179) 93%, rgb(179,179,179) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgb(198,198,198) 0%,rgb(202,202,202) 12%,rgb(206,206,206) 25%,rgb(196,196,196) 39%,rgb(187,187,187) 50%,rgb(187,187,187) 76%,rgb(173,173,173) 82%,rgb(173,173,173) 82%,rgb(182,182,182) 91%,rgb(179,179,179) 93%,rgb(179,179,179) 93%,rgb(179,179,179) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgb(198,198,198) 0%,rgb(202,202,202) 12%,rgb(206,206,206) 25%,rgb(196,196,196) 39%,rgb(187,187,187) 50%,rgb(187,187,187) 76%,rgb(173,173,173) 82%,rgb(173,173,173) 82%,rgb(182,182,182) 91%,rgb(179,179,179) 93%,rgb(179,179,179) 93%,rgb(179,179,179) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#b3b3b3',GradientType=0 ); /* IE6-9 */
+
 }
 .lightBanner {
   color: #FFF;
@@ -221,5 +232,26 @@ input {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+}
+.product-option h6 {
+  padding:15px 0 0;
+  color: #656565;
+  font-size: 14px;
+}
+.product-option select {
+    height: 30px;
+    line-height:1;
+    color: #656565;
+    font-size: 14px;
+}
+.job-summary input, [type='text'],[type='number'],[type='search'],[type='password'] {
+    height: 40px;
+    font-size: 14px;
+}
+.job-summary textarea {
+    font-size: 14px;
+    box-sizing: border-box;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+    border-radius: 0;
 }
 </style>

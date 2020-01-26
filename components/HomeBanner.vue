@@ -1,21 +1,29 @@
 <template>
-  <div class="container">
+  <div>
     
-    <VueSlickCarousel :arrows="true" :dots="true" :autoplay="true" :touchMove="true" :swipe="true">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-    </VueSlickCarousel>
+        <div>
+            <img :src="banner.bannerImage">
+        </div>
+   
    
   </div>
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-
   export default {
-    name: 'HomeCarousel',
-    components: { VueSlickCarousel },
+    name: 'HomeBanner',
+   props: {
+    banner: Object
+  },
   }
+  
 </script>
+<style scoped>
+.home-banner .slick-slider{ 
+    background:#fff ;
+    width: 100%;
+  }
+  .home-banner .slick-list img {
+    max-height: 500px;
+  }
+</style>

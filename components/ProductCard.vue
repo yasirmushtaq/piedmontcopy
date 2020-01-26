@@ -71,5 +71,9 @@ div:hover {
 }
 a {
   text-decoration: none;
+    opacity: 1;
+   transition: opacity .45s ease-in-out;
+   -moz-transition: opacity .45s ease-in-out;
+   -webkit-transition: opacity .45s ease-in-out;
 }
 </style>
