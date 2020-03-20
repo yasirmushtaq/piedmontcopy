@@ -72,16 +72,6 @@
             Oakland, CA 94611<br>
             510-655-3030
           </li>
-
-          <li class="invisible">.</li>
-          <li>
-            <h4>Berkeley</h4>
-            2980 College Ave # 2A<br />
-           Berkeley, CA 94705<br>
-           510-549-2020
-          </li>
-
-
         </ul>
         </div>
 
@@ -105,7 +95,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 clearfix"> 
-              <strong>&copy; 2019 Piedmont Copy. All rights reserved.</strong>
+              <strong>&copy; 2020 Piedmont Copy. All rights reserved.</strong>
             </div>
           </div>
         </div>

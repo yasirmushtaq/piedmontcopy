@@ -1,66 +1,17 @@
-<!--<template>
-  <div class="navBar">
-    <nuxt-link to="/" class="brand">
-      <img src="~/assets/images/logo.jpg" class="logo" />
-    </nuxt-link>
-    <nav>
-      <nuxt-link to="/">
-        List |
-      </nuxt-link>
-      <nuxt-link to="/products">
-        All Products
-      </nuxt-link>
-    </nav>
-  </div>
-</template>
-<style scoped>
-.navBar {
-  width: 1170px;
-  margin: 0 auto;
-}
-.brand {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-  color: #333333;
-  text-decoration: none;
-}
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-}
-.nav .nav-item {
-  box-sizing: border-box;
-  margin: 0 5px;
-  color: rgba(0, 0, 0, 0.5);
-  text-decoration: none;
-}
-.nav .nav-item.router-link-exact-active {
-  color: #39b982;
-  border-bottom: solid 2px #39b982;
-}
-.nav a {
-  display: inline-block;
-}
-.logo {
-  width: 200px;
-}
-</style> -->
 <template>
-<div  class="container">
-  <div class="row">
-    <nuxt-link to="/" class="brand">
-      <img src="~/assets/images/logo.jpg" class="logo" />
-    </nuxt-link>
+<div>
+  <div  class="container">
+    <div class="row">
+      <nuxt-link to="/" class="brand">
+        <img src="~/assets/images/logo.jpg" class="logo" />
+      </nuxt-link>
+    </div>
   </div>
-
-  
   <div class="header">
     <div class="row">
     <!--Main Menu HTML Code-->
       <nav class="dropdown-navigation ">
+                <div class="container">
                 <ul class="dropdown-navigation-mobile dropdown-navigation-list">
                 
                   <li class="mobile-menuopner">
@@ -68,7 +19,8 @@
                   </li>
                 
                   <li aria-haspopup="true"><a href="/vue/products">All Products</a>
-                    <div class="conatiner-fluid megamenu ">
+                    <div class="megamenu">
+                      <div class="container">
                         <div class="row px-4">
                         <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                           <li><a href="#">Banners </a></li>
@@ -112,10 +64,11 @@
                         </ul>
                       </div>
                     </div>
+                    </div>
                   </li>
                  
-                   <li aria-haspopup="true"><a href="#" class="red">Marketing Materials</a>
-                    <div class="conatiner-fluid megamenu ">
+                   <li aria-haspopup="true"><a href="#">Business Cards</a>
+                    <!-- <div class="conatiner-fluid megamenu ">
                         <div class="row px-4">
                         <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                           <li class="title"> Best Sellers</li>
@@ -158,27 +111,24 @@
                           <li class="bottom-link"><a href="#">Shop all Marketing Materials ></a></li>
                         </ul>
                       </div>
-                    </div>
+                    </div> -->
                   </li>
 
                 
-                  <li aria-haspopup="true"><a href="#" class="red">Promotional Products</a>
-                    <div class="conatiner-fluid megamenu ">
-                      <div class="row px-4">
-                      <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                        <li class="title"> Best Sellers</li>
-                        <li><a href="#">Postcards</a></li>
-                        <li><a href="#">Flyers</a></li>
-                        <li><a href="#">Brochures</a></li>
-                        <li><a href="#">Presentation Folders</a></li>
-                        <li><a href="#"><span class="green font-weight-bold">NEW</span> Booklets</a></li>
+                  <li aria-haspopup="true"><a href="#">Signs</a>
+                      <div class="megamenu">
+                        <div class="container">
+                        <div class="row">
+                          <ul class="col-lg-3 col-md-3 col-xs-3 link-list">
+                            <li> <a href="#">Banners</a></li>
+                            <li><a href="#">Postcards</a></li>
+                            <li><a href="#">Yard Signs</a></li>
+                          </ul>
+                        </div>
+                        </div>
+                      </div>
 
-                        <li class="title">Services</li>
-                        <li><a href="#">Postcard Mailing Services</a></li>
-                        <li><a href="#">Graphic Design Services</a></li>
-                      </ul>
-
-                      <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                      <!--<ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                         <li class="title">Advertising</li>
                         <li><a href="#">Door Hangers</a></li>
                         <li><a href="#">Menus</a></li>
@@ -218,11 +168,11 @@
                         <li class="bottom-link"><a href="#">Shop all Marketing Materials ></a></li>
                       </ul>
                     </div>
-                  </div>
+                  </div> -->
                   </li>
                  
-                  <li aria-haspopup="true"><a href="#">Banners & Signs</a>
-                    <div class="conatiner-fluid megamenu ">
+                  <li aria-haspopup="true"><a href="#">Postcards</a>
+                    <!-- <div class="conatiner-fluid megamenu ">
                       <div class="row px-4">
                       <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                         <li class="title">Banners</li>
@@ -262,11 +212,11 @@
                         <li class="bottom-link"><a href="#">Shop all Banners & Signs ></a></li>
                       </ul>
                       </div>
-                  </div>
+                  </div> -->
                   </li>
 
-                      <li aria-haspopup="true"><a href="#">Labels & Stickers</a>
-                    <div class="conatiner-fluid megamenu ">
+                    <li aria-haspopup="true"><a href="#">Flyers</a>
+                    <!-- <div class="conatiner-fluid megamenu ">
                       <div class="row px-4">
                       <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                         <li class="title"> Stickers</li>
@@ -287,11 +237,11 @@
                         <li class="bottom-link"><a href="#">Shop all Labels & Stickers ></a></li>
                       </ul>
                     </div>
-                  </div>
+                  </div> -->
                   </li>
 
-                   <li aria-haspopup="true"><a href="#">Books Printing</a>
-                    <div class="conatiner-fluid megamenu ">
+                   <li aria-haspopup="true"><a href="#">Brochures</a>
+                    <!-- <div class="conatiner-fluid megamenu ">
                         <div class="row px-4">
                         <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                           <li class="title">Bindding</li>
@@ -303,11 +253,11 @@
                           <li class="bottom-link"><a href="#">Shop all Books Printing ></a></li>
                         </ul>
                         </div>
-                    </div>
+                    </div> -->
                   </li>
 
-                    <li aria-haspopup="true"><a href="#">Photo Calendars</a>
-                    <div class="conatiner-fluid megamenu ">
+                    <li aria-haspopup="true"><a href="#">Envelopes</a>
+                    <!-- <div class="conatiner-fluid megamenu ">
                         <div class="row px-4">
                         <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                           <li class="title">Calendars</li>
@@ -321,12 +271,12 @@
                         </ul>
 
                         </div>
-                    </div>
+                    </div> -->
                   </li>
 
 
-                  <li aria-haspopup="true"><a href="#">Invitations & Stationary</a>
-                    <div class="conatiner-fluid megamenu ">
+                  <li aria-haspopup="true"><a href="#">Letterhead</a>
+                    <!-- <div class="conatiner-fluid megamenu ">
                       <div class="row px-4">
                       <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                         <li class="title"> Best Sellers</li>
@@ -360,7 +310,6 @@
                         <li><a href="#">Sticky Notes</a></li>
                         <li><a href="#">Stamps & Ink</a></li>
                         <li><a href="#">Gift Certificates</a></li>
-
                         <li class="title">Magnets</li>
                         <li><a href="#">Car Magnets</a></li>
                         <li><a href="#">Magnetic Business Cards</a></li>
@@ -371,10 +320,10 @@
                         <li class="bottom-link"><a href="#">Shop all Marketing Materials ></a></li>
                       </ul>
                     </div>
-                  </div>
+                  </div> -->
                   </li>
 
-                  <li aria-haspopup="true"><a href="#">Digital Marketing</a>
+                  <!-- <li aria-haspopup="true"><a href="#">Digital Marketing</a>
                     <div class="conatiner-fluid megamenu ">
                       <div class="row px-4">
                       <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
@@ -384,7 +333,6 @@
                         <li><a href="#">Brochures</a></li>
                         <li><a href="#">Presentation Folders</a></li>
                         <li><a href="#"><span class="green font-weight-bold">NEW</span> Booklets</a></li>
-
                         <li class="title">Services</li>
                         <li><a href="#">Postcard Mailing Services</a></li>
                         <li><a href="#">Graphic Design Services</a></li>
@@ -403,7 +351,6 @@
                         <li class="title">Packaging</li>
                         <li><a href="#">Hang Tags</a></li>
                         <li><a href="#">Paper Bags</a></li>
-
                         <li class="title">Packaging</li>
                         <li><a href="#">Labels & Stickers</a></li>
                         <li><a href="#">Roll Labels</a></li>
@@ -419,7 +366,6 @@
                         <li><a href="#">Sticky Notes</a></li>
                         <li><a href="#">Stamps & Ink</a></li>
                         <li><a href="#">Gift Certificates</a></li>
-
                         <li class="title">Magnets</li>
                         <li><a href="#">Car Magnets</a></li>
                         <li><a href="#">Magnetic Business Cards</a></li>
@@ -431,10 +377,11 @@
                       </ul>
                     </div>
                   </div>
-                  </li>
+                  </li> -->
 
                   <li aria-haspopup="true"><a href="#">Design Services</a>
-                    <div class="conatiner-fluid megamenu ">
+                    <div class="megamenu">
+                      <div class="container">
                       <div class="row px-4">
                       <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                         <li class="title"> Best Sellers</li>
@@ -478,27 +425,24 @@
                         <li><a href="#">Sticky Notes</a></li>
                         <li><a href="#">Stamps & Ink</a></li>
                         <li><a href="#">Gift Certificates</a></li>
-
                         <li class="title">Magnets</li>
                         <li><a href="#">Car Magnets</a></li>
                         <li><a href="#">Magnetic Business Cards</a></li>
                         <li><a href="#">See all Magnets</a></li>
                       </ul>
-
                       <ul class="col-lg-12 col-md-12 col-xs-12 ">
                         <li class="bottom-link"><a href="#">Shop all Marketing Materials ></a></li>
                       </ul>
                     </div>
+                    </div>
                   </div>
                   </li>
-
-                  <li><a href="#" class="pink">Deals</a></li>
-                  
+                  <!-- <li><a href="#" class="pink">Deals</a></li>                   -->
                 </ul>
+              </div> 
       </nav>
   <!--Menu HTML Code--> 
     </div>
   </div>
-
   </div>
 </template>

@@ -10,7 +10,7 @@
 /*--------------------------------------------------------------------------
 |  01  Base CSS
 --------------------------------------------------------------------------*/
-.brand{margin: 30px 0 20px 0;}
+.brand{margin: 20px 0 20px 0;}
 .logo {width: 230px;}
 .breadcrumb {background-color: none;}
 /*--------------------------------------------------------------------------
@@ -31,8 +31,8 @@
 	padding: 0px;
 	margin: 0px auto;
 	width: 100%;
-	max-width: 1284px;
-	background-color: #ffffff;
+	/* max-width: 1284px; */
+	background-color: #3071a9;
 	display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: nowrap;
@@ -43,7 +43,6 @@
 	margin: 0 auto 0 auto;
 	width: 100%;
 	padding: 0px;
-	display: inline-block;
     -webkit-flex-grow: 1;
     flex-grow: 1;
 }
@@ -55,8 +54,8 @@
     text-align: center;
     cursor: pointer;
     white-space: normal;
-    border-right: 1px solid #c8cbcc;
-	border-bottom: 1px solid #c8cbcc;
+    /* border-right: 1px solid #c8cbcc;
+	border-bottom: 1px solid #c8cbcc; */
 	
 }
 
@@ -118,7 +117,7 @@
 }
 .dropdown-navigation-list > li > a {
 	display: inline-block;
-    color: #00111a;
+    color: #FFF;
     font-weight: bold;
     text-decoration: none;
 	text-align: center;
@@ -126,7 +125,7 @@
     padding: 2px 9px 3px;
     width: 100%;
 	margin: auto;
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 17px;
 }
 .dropdown-navigation-list li a:hover .arrow:after {
@@ -145,7 +144,6 @@
 	width: 100%;
 	left: 0px;
 	position: absolute;
-	top: 56px;
 	color: #00111a;
 	line-height: 17px;
 	z-index: 1000;

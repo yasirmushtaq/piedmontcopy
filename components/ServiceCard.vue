@@ -1,17 +1,15 @@
 <template>
 <div class="col-sm-12 col-md-4 col-lg-4">
-  
-
-    <h3></h3>
-    <ul class="services-list">
-      <li>
-        
-        <i class="far fa-calendar-check"></i>
-          {{ service.item }}
-      </li>
-    </ul>
- 
- 
+    <div class="wrapper">
+      <img :src='service.image'>
+      <h4>{{ service.title }}</h4>
+      <ul class="services-list">
+        <li>        
+          <i class=""></i>
+            {{ service.content }}
+        </li>
+      </ul>
+    </div>
 </div>
 </template>
 <script>
@@ -26,5 +24,15 @@ export default {
 <style scoped>
   .services-list li{
     list-style: none;
+  }
+  .wrapper {
+    border: solid 1px #ccc;
+    min-height: 405px;
+    margin-top: 15px;
+  }
+  .wrapper h4 {
+    display: block;
+    text-align: center;
+    padding: 25px 0 10px;
   }
 </style>

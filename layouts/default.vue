@@ -1,17 +1,20 @@
 <template>
   <div id="app">
+    <HeaderTop />
     <nav-bar />
     <nuxt />
     <Footer />
   </div>
 </template>
 <script>
+import HeaderTop from '~/components/HeaderTop'
 import NavBar from '~/components/NavBar'
 import Footer from '~/components/Footer'
 export default {
   components: {
     NavBar,
-    Footer
+    Footer, 
+    HeaderTop
   }
 }
 </script>

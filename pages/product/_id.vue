@@ -1,5 +1,4 @@
 <template>
-
   <div v-if="product">
     <div class="container-fluid breadcrumbs-wrapper">
       <div class="breadcrumb container">
@@ -31,46 +30,12 @@
           </select>
         
         </div>
-       <!-- <div v-html="product.productOptions"></div>
-         <h6>Size</h6>
-        <select>
-          <option v-for="(size, index) in product.options.size"
-            :key="index">
-            {{ size }}
-          </option>
-        </select>
-        <h6>Printed Side</h6>
-        <select>
-          <option v-for="(side, index) in product.options.printedSide"
-            :key="index">
-            {{ side }}
-          </option>
-        </select>
-        <h6>Paper</h6>
-        <select>
-          <option v-for="(paper, index) in product.options.papers"
-            :key="index">
-            {{ paper }}
-          </option>
-        </select>
-        <h6>UV Coating</h6>
-        <select>
-          <option v-for="(coating, index) in product.options.uvCoatings"
-            :key="index">
-            {{ coating }}
-          </option>
-        </select>
-        <h6>Quantity</h6>
-        <select>
-          <option v-for="(quantity, index) in product.options.quantity"
-            :key="index">
-            {{ quantity }}
-          </option>
-        </select> -->
       </div>
       <div class="column">
         <h2><span class="badge">2</span>Upload Design</h2>
         <img id="frontpreviewing" src="http://piedmontcopy.com/wp/wp-content/themes/piedmont/assets/images/upload-img.png">
+        <input type="file" @change="onFileSelected">
+        <button @click="onUpload">Upload</button>
       </div> 
       <div class="column job-summary">
         <h2><span class="badge">3</span>Job Information</h2>
@@ -92,11 +57,9 @@
   </div>
 </template>
 <script>
-
 import ProductTabs from '@/components/Product-tabs.vue'
-
+import axios from 'axios'
 export default {
-
   components: {
     ProductTabs
   },
@@ -105,39 +68,38 @@ export default {
       title: 'Product Detail'
     }
   },
-  /* validate ({ params }) {
-    // Must be a number
-    return /^\d+$/.test(params.id)
-    
-  },  */
+data() {
+    return {
+      selectedFile: ''
+    }
+  },
   async asyncData({ $axios, error, params }) {
-    //return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v1/productID/' + params.id ).then((response) => {
       return $axios.get('http://piedmontcopy.com/wp/wp-json/product/v2/productID/' + params.id ).then((response) => {
-      
-      //alert(params.id);
       return {
         product: response.data
       }
-     
     })
     .catch( e => {
       error({ statusCode: 503, message: 'unable to load products at this time. please try again'})
     })
 
   },
-  computed : {
-    
-   
-  },
   methods: {
-   /*  bannerImage() {
-      return require ('~/assets/images/' + this.product.banner)
-    } */
-    
+    onFileSelected(event) {
+      this.selectedFile = event.target.files[0]
+    },
+    onUpload() {
+      const fd = new FormData();
+      fd.append('uploadedFile', this.selectedFile, this.selectedFile.name)
+      axios.post ('http://piedmontcopy.com/wp/wp-json/products/v2/feeds', fd,  {
+        onUploadProgress: function(event) {
+         console.log(event)
+      }})
+      .then( res => console.log(res));
+    } 
   },
  
 }
-
 </script>
 <style scoped>
 
@@ -200,11 +162,6 @@ input {
     z-index: 90; */
     color: #FFF;
     background: rgb(198,198,198); /* Old browsers */
-background: -moz-linear-gradient(top, rgb(198,198,198) 0%, rgb(202,202,202) 12%, rgb(206,206,206) 25%, rgb(196,196,196) 39%, rgb(187,187,187) 50%, rgb(187,187,187) 76%, rgb(173,173,173) 82%, rgb(173,173,173) 82%, rgb(182,182,182) 91%, rgb(179,179,179) 93%, rgb(179,179,179) 93%, rgb(179,179,179) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgb(198,198,198) 0%,rgb(202,202,202) 12%,rgb(206,206,206) 25%,rgb(196,196,196) 39%,rgb(187,187,187) 50%,rgb(187,187,187) 76%,rgb(173,173,173) 82%,rgb(173,173,173) 82%,rgb(182,182,182) 91%,rgb(179,179,179) 93%,rgb(179,179,179) 93%,rgb(179,179,179) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgb(198,198,198) 0%,rgb(202,202,202) 12%,rgb(206,206,206) 25%,rgb(196,196,196) 39%,rgb(187,187,187) 50%,rgb(187,187,187) 76%,rgb(173,173,173) 82%,rgb(173,173,173) 82%,rgb(182,182,182) 91%,rgb(179,179,179) 93%,rgb(179,179,179) 93%,rgb(179,179,179) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#b3b3b3',GradientType=0 ); /* IE6-9 */
-
 }
 .lightBanner {
   color: #FFF;

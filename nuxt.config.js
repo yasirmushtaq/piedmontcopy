@@ -24,7 +24,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: 'http://piedmontcopy.com/wp/wp-content/themes/piedmont/assets/images/favicons/favicon-16x16.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i&display=swap&subset=latin-ext,vietnamese' },
       { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', integrity: 'sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh', crossorigin:'anonymous' },
-      
+      { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'}
     ],
     script: [
       { src: 'https://kit.fontawesome.com/de5e03e7d4.js', crossorigin: 'anonymous' }

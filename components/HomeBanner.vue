@@ -1,11 +1,8 @@
 <template>
   <div>
-    
-        <div>
-            <img :src="banner.bannerImage">
-        </div>
-   
-   
+    <div>
+        <img :src="banner.bannerImage">
+    </div>
   </div>
 </template>
 
@@ -14,9 +11,8 @@
     name: 'HomeBanner',
    props: {
     banner: Object
-  },
+    }
   }
-  
 </script>
 <style scoped>
 .home-banner .slick-slider{ 
