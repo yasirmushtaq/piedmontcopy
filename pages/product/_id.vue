@@ -15,7 +15,7 @@
       </div>
       <!-- <h3>{{ product.title }} </h3> -->
       <div class="product-option">
-      <div class="column">
+      <!-- <div class="column">
         <h2><span class="badge">1</span>Product Options</h2>
 
         <div v-for="(optGroup, index) in product.productOptions" :key="index">
@@ -36,23 +36,29 @@
         <img id="frontpreviewing" src="http://piedmontcopy.com/wp/wp-content/themes/piedmont/assets/images/upload-img.png">
         <input type="file" @change="onFileSelected">
         <button @click="onUpload">Upload</button>
-      </div> 
-      <div class="column job-summary">
-        <h2><span class="badge">3</span>Job Information</h2>
-        <input type="text" placeholder="Job Name" name="job_name">
-        <input type="text" placeholder="Full Name" name="full_name">
-        <input type="text" placeholder="Email" name="email">
-        <input type="text" placeholder="Phone" name="phone">
-        <textarea 
-          name="additional_information" 
-          class="form-control" 
-          rows="5" 
-          placeholder="Additional Information">
-        </textarea>
-        <input type="submit" class="btn btn-primary" value="submit order" name="submit-order">
+      </div>  -->
+      <h2><!-- <span class="badge"></span> --> For Estimates</h2>
+      <div class="estimates">
+        <p>For free estimates please fill out the form below and we will reach out to you shortly. If you need to send any files please email them to <a href="mailto:print@piedmontcopy.com">print@piedmontcopy.com</a> or call us directly at <a href="tel:510-655-3030">510-655-3030</a>.</p>
+        <!-- <br>Note: Currently we are redesigning our website to deal and server our customers better with the situtation created by COVID-19. -->
+      </div>
+      <div class="estimate-form">
+        <form>
+          <input type="text" placeholder="Job Title" name="job_name">
+          <input type="text" placeholder="Full Name" name="full_name">
+          <input type="text" placeholder="Email Address" name="email">
+          <input type="text" placeholder="Phone Number" name="phone">
+          <textarea 
+            name="additional_information" 
+            class="form-control" 
+            rows="5" 
+            placeholder="Any Additional Information (size, paper quality, quantity etc.)">
+          </textarea>
+          <div class="submit-btn"><input type="submit" class="btn btn-primary" value="Submit" name="submit-order"></div>
+        </form>
       </div>
       </div>
-    <ProductTabs :product="product"/>
+    <!-- <ProductTabs :product="product"/> -->
     </div>
   </div>
 </template>
@@ -106,6 +112,28 @@ data() {
 input {
   margin-bottom: 15px;
 }
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.estimate-form {
+  width: 80%;
+  margin: 0 auto;
+}
+.estimates a {
+    color: #0056b3;
+    text-decoration: underline;
+}
+.estimates {
+  width: 80%;  
+  background: #e1f0ff;
+  border: solid 1px #336699;
+  margin: 25px auto;
+}
+.estimates p {
+  padding: 15px;
+}
 .column {
   width: 30%;
   float: left;
@@ -129,11 +157,11 @@ input {
 }
 .product-option {
     width: 100%;
+    padding: 45px;
     float: left;
     margin-bottom: 40px;
     border-radius: 6px;
     background-color: #f7f7f7;
-    padding: 15px;
 }
   .breadcrumb {
     
@@ -167,7 +195,7 @@ input {
   color: #FFF;
 }
 .product-option h2 {
-    font-size: 14px;
+    font-size: 20px;
     color: #ffffff;
     background-color: #6aa6d1;
     width: 100%;
